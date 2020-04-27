@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json","width": 1000,
+  "height":1000,
+  "data": {"url": "https://raw.githubusercontent.com/Maplub/advmap/master/inf_waste.csv"},"title": "waste amount 2561 ",
+  "selection": {
+    "pts": {
+      "type": "single"
+    }
+  },
+  "mark": "bar", 
+  "encoding": {
+    "x": {"aggregate": "sum", "field": "wasteamt", "type": "quantitative","title": "waste amount ( tons ) "},
+    "y": {"field": "dname", "type": "ordinal","title":"district"},
+    "color": {"timeUnit":"yearmonth","field": "month", "type": "nominal"},"tooltip": [
+                {"field": "wasteamt", "type": "quantitative"},{"timeUnit":"yearmonth","field": "month", "type": "ordinal"}]
+  }
+}
